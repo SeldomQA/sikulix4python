@@ -1,12 +1,16 @@
-from . sxclasses import *
+import os
+from .sxclasses import *
 
 SCREEN = Screen()
+
 
 def reset():
     SX().reset()
 
+
 def setBundlePath():
     addImagePath()
+
 
 def addImagePath(*path):
     if len(path) == 0:
@@ -19,17 +23,22 @@ def addImagePath(*path):
         aPath = path[0]
         SXImagePath.add(aPath)
 
+
 def openApp(app):
     return SXApp(app).open()
+
 
 def switchApp(app):
     return SXApp(app).focus()
 
+
 def closeApp(app):
     return SXApp(app).close()
 
+
 def click(*args):
     return SCREEN.click(*args)
+
 
 def hover(*args):
     """

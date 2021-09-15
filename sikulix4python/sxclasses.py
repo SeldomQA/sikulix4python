@@ -1,14 +1,14 @@
-from . sxbase import *
-from . sxregion import Region
+from .sxbase import *
+from .sxregion import Region
+
 
 class Screen(Region):
-
     SXClass = SXScreen
 
-class Location(SXBase):
 
+class Location(SXBase):
     SXClass = SXLocation
 
-class Image(SXBase):
 
+class Image(SXBase):
     SXClass = SXImage

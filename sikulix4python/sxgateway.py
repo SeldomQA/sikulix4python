@@ -1,6 +1,4 @@
-import sys
-import time
-import os
+
 
 def convertArgs(args):
     sxargs = JavaGW.jvm.java.util.ArrayList()
@@ -10,6 +8,7 @@ def convertArgs(args):
         except:
             sxargs.append(arg.instance())
     return sxargs
+
 
 def sxstart():
     from py4j.java_gateway import JavaGateway
@@ -21,11 +20,13 @@ def sxstart():
         print("sxstart: SikuliX not running")
         exit(1)
 
+
 (JavaGW, SXPKG) = sxstart()
 
-def sxClass(className, pkgName = "script"):
+
+def sxClass(className, pkgName="script"):
     classRef = "SXPKG.%s.%s" % (pkgName, className)
-    theClass = eval(classRef, {"SXPKG" : SXPKG})
+    theClass = eval(classRef, {"SXPKG": SXPKG})
     try:
         theClass.getDefaultInstance4py()
     except:
@@ -33,7 +34,8 @@ def sxClass(className, pkgName = "script"):
         return None
     return theClass
 
-def sxClassHelp(className, pkgName = "script"):
+
+def sxClassHelp(className, pkgName="script"):
     theClass = sxClass(className, pkgName)
     if theClass:
         print(theClass.__doc__)

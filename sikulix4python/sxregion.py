@@ -1,4 +1,5 @@
-from . sxbase import *
+from .sxbase import *
+
 
 class Region(SXBase):
     """

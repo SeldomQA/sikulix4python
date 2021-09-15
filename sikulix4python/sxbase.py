@@ -1,4 +1,4 @@
-from . sxgateway import *
+from .sxgateway import *
 
 SX = SXPKG.script.SX
 SXRegion = SXPKG.script.Region
@@ -8,12 +8,12 @@ SXImage = SXPKG.script.Image
 SXImagePath = SXPKG.script.ImagePath
 SXApp = SXPKG.script.App
 
-class SXBase():
 
+class SXBase:
     SXClass = SX
 
     def __init__(self, *args):
-        success = True;
+        success = True
         try:
             self.instance = self.SXClass.getDefaultInstance4py()
             if len(args) > 0:
@@ -22,13 +22,12 @@ class SXBase():
             success = False
         if not success:
             raise Exception("Class not prepared for SikuliX")
-            exit(1)
 
     def __str__(self):
         return self.instance.toString()
 
     def __getattr__(self, item):
-        currentObject = self.instance;
+        currentObject = self.instance
 
         def temp_method(*args, **kwargs):
             mCall = item + "("
@@ -41,7 +40,7 @@ class SXBase():
                 mCall += ", args[%d]" % nArg
                 mCallError += ", %s" % (args[nArg])
             mCall += ")"
-            mCallError  += ")"
+            mCallError += ")"
             try:
                 toEval = "currentObject." + mCall
                 result = eval(toEval, {"currentObject": self.instance, "args": args})
@@ -51,4 +50,3 @@ class SXBase():
                 return currentObject
 
         return temp_method
-
