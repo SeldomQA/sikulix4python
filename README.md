@@ -2,7 +2,7 @@
 
 Use SikuliX from real [Python via py4j](https://www.py4j.org) (but no need to know, how it works ;-)
 
-![](./sikulix.mp4)
+![](./sikulix.gif)
 
 ## 安装
 * 下载 [sikulixapi.jar(2.0.5)](https://raiman.github.io/SikuliX1/downloads.html)
