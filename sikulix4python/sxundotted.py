@@ -1,5 +1,9 @@
 import os
-from .sxclasses import *
+from .sxclasses import SX
+from .sxclasses import SXApp
+from .sxclasses import Screen
+from .sxclasses import SXImagePath
+
 
 SCREEN = Screen()
 

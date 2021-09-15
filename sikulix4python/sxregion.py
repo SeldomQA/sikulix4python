@@ -1,4 +1,6 @@
-from .sxbase import *
+from .sxbase import SXBase
+from .sxbase import SXRegion
+from .sxbase import convertArgs
 
 
 class Region(SXBase):
